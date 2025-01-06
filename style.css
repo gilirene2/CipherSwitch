@@ -1,0 +1,138 @@
+/* style.css */
+
+/* Import a terminal-like font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+/* Normalize box-sizing for consistency */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu Mono', monospace; /* Terminal-like font */
+    background-color: #222; /* Dark background */
+    color: #00ff00; /* Hacker terminal green */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+    color: #00ff00; /* Hacker terminal green */
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 5px #00ff00;
+    align-items: center;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px; /* Increased width for labels */
+    height: 34px;
+    align-items: center;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    align-items: center;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+    align-items: center;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00ff00; /* Hacker terminal green */
+}
+
+input:checked + .slider:before {
+    transform: translateX(46px); /* Adjust for larger switch */
+}
+
+/* Common styles for input and textarea */
+.key-input,
+.input-area,
+.output-area {
+    width: 100%;
+    max-width: 300px; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #333;
+    color: #00ff00; /* Hacker terminal green */
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1rem;
+    resize: none;
+}
+
+/* Specific adjustments for textarea */
+.input-area,
+.output-area {
+    height: 100px;
+    overflow: auto; /* Prevent unintended scrollbars */
+}
+
+.output-container {
+    width: 100%;
+    max-width: 300px; /* Match the max-width of input/output areas */
+    margin: 10px auto; /* Center align if needed */
+    display: flex;
+    flex-direction: column; /* Stack button and textarea vertically */
+    align-items: flex-end; /* Align button to the right */
+}
+
+.copy-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ff00; /* Hacker terminal green */
+    color: #222;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.copy-button:hover {
+    background-color: #00cc00;
+}

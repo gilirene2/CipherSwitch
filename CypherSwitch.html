@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CipherSwitch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">CipherSwitch</h1>
+    <div class="toggle-switch">
+      <span>Encrypt</span> <!-- Left label -->
+      <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider"></span>
+      </label>
+      <span>Decrypt</span> <!-- Right label -->
+    </div>
+    </div>
+    <input type="number" id="keyInput" class="key-input" placeholder="Enter Cipher Key (e.g., 3)">
+    <textarea id="inputText" class="input-area" placeholder="Input Here ..."></textarea>
+    <div class="output-container">
+      <textarea id="outputText" class="output-area" placeholder="Output Here ..." readonly></textarea>
+      <button id="copyButton" class="copy-button">Copy</button>
+    </div>
+  </div>
+  <script src="CScript.js"></script>
+</body>
+</html>
